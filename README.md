@@ -1,6 +1,6 @@
 # db
 
-> A Vue.js project
+> 简易豆瓣手机页,仿写、改写
 
 ## Build Setup
 
