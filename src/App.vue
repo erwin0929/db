@@ -22,4 +22,17 @@ export default {
   input{
     border: none;
   }
+  ul,
+  li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+  }
+  img{
+    width: 100%;
+    display: block;
+  }
 </style>

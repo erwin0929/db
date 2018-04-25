@@ -2,10 +2,13 @@
 // *** 路由配置文件
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Page from '../views/Page'
+import Page from '../views/Page'
 import Login from '../views/Login'
 import Register from '../views/Register'
-// import Movie from '../views/Movie'
+import Movie from '../views/Movie'
+import Book from '../views/Book'
+import Status from '../views/Status'
+import Group from '../views/Group'
 
 Vue.use(Router)
 
@@ -16,12 +19,27 @@ export default new Router({
     {
       path: '/page',
       name: 'Page',
-      // component: Page,
+      component: Page,
       children: [
         {
           path: 'movie',
-          name: 'Movie'
-          // component: Movie
+          name: 'Movie',
+          component: Movie
+        },
+        {
+          path: 'book',
+          name: 'Book',
+          component: Book
+        },
+        {
+          path: 'status',
+          name: 'Status',
+          component: Status
+        },
+        {
+          path: 'group',
+          name: 'Group',
+          component: Group
         }
       ]
     },

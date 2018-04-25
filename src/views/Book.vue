@@ -1,11 +1,13 @@
 <template>
-	$END$
+  <div>
+    book
+  </div>
 </template>
 
 <script>
-    export default {
-        name: ""
-    }
+export default {
+  name: 'Book'
+}
 </script>
 
 <style scoped>
