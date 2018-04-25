@@ -17,6 +17,8 @@
 
 <script>
 import LoginInput from '../components/LoginInput'
+let a = 3
+console.log(a)
 export default {
   name: 'Login',
   components: { LoginInput },
