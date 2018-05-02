@@ -8,47 +8,36 @@
         <router-link class="more-href" :to="{}">更多</router-link>
       </span>
     </div>
-    <div v-if="model === 'tag'" class="find-box">
+    <div v-if="model === 'tag'">
       <ul class="tag-box">
-        <li>
-          <router-link :to="{}" class="tag-href">同时入选IMDB250和豆瓣电影250的电影</router-link>
-        </li>
-        <li>
-          <router-link :to="{}" class="tag-href">带你进入不正常的世界</router-link>
-        </li>
-        <li>
-          <router-link :to="{}" class="tag-href">用电【影】来祭奠逝去的岁月</router-link>
-        </li>
-        <li>
-          <router-link :to="{}" class="tag-href">女孩们的故事【电影】</router-link>
+        <li v-for="item in items" :key="item.title">
+          <a :href="item.href" class="tag-href" :style="{ color: item.color }">{{item.title}}</a>
         </li>
       </ul>
     </div>
     <div v-else class="section-box">
-      <div class="section">
-        <div class="action-img">
-          <img src="../assets/action01.jpg" alt="">
-        </div>
-        <div class="works-title">狂暴巨兽</div>
-        <div class="star-parent">
-          <div class="star-box">
-            <span class="star star-full"></span>
-            <span class="star star-half"></span>
-            <span class="star star-gray"></span>
-            <span class="star star-gray"></span>
-            <span class="star star-gray"></span>
+      <div class="section" v-for="item in items" :key="item.id">
+        <router-link :to="{}">
+          <div class="action-img">
+            <img :src="item.image" alt="">
           </div>
-          <span>6.7</span>
-        </div>
+          <div class="works-title">{{item.title}}</div>
+          <rating :score="item.score"></rating>
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Rating from '../components/Rating'
 export default {
   name: 'ScrollList',
-  props: ['title', 'model']
+  props: ['title', 'model', 'items'],
+  components: { Rating },
+  create () {
+    console.log(this)
+  }
 }
 </script>
 
@@ -57,9 +46,12 @@ export default {
   $h: 2.8rem;
   .title-box{
     font-size:  1.1rem;
-    padding: 0 0.8rem;
+    padding-right: 0.8rem;
     display: flex;
     justify-content: space-between;
+  }
+  .action-img{
+    height: 11.9rem;
   }
   .title{
     height: $h;
@@ -78,36 +70,16 @@ export default {
     -webkit-overflow-scrolling:touch;
   }
   .section{
-    margin: 0 0.3rem;
+    margin-right: 0.3rem;
     flex: 0 0 7.9rem;
   }
   .works-title{
+    color: #000;
     font-size: 1rem;
     text-align: center;
     $h: 2.3rem;
     height: $h;
     line-height: $h + 0.4;
-  }
-  .star-parent{
-    display: flex;
-  }
-  .star-box{
-    flex: 0 1 75.5%;
-    display: flex;
-  }
-  .star{
-    width: 1rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-  .find-box{
-    padding-bottom: 3rem;
-  }
-  @each $v in star-full,star-half,star-gray{
-    .#{$v}{
-      background-image: url("#{$img-path}#{$v}.png");
-    }
   }
   .tag-box{
     display: flex;

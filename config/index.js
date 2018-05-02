@@ -6,11 +6,18 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    // 远程请求的代理设置,将匹配到的Api替换成target地址
+    proxyTable: {
+      '/Api': {
+        target: 'https://api.douban.com/v2/',
+        secure: false,
+        changeOrigin: true,
+        pathRewrite: {'^/Api': ''}
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

@@ -29,6 +29,8 @@ export default {
     list-style: none;
   }
   a{
+    width: 100%;
+    display: block;
     text-decoration: none;
   }
   img{

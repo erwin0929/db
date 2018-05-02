@@ -1,8 +1,8 @@
-# db
+# DB
 
 > 简易豆瓣手机页,仿写、改写
 
-## Build Setup
+### Build Setup
 
 ``` bash
 # install dependencies
