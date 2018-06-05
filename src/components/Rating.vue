@@ -6,12 +6,12 @@
       <template v-for="n in full">
         <span class="star star-full" :key="n"></span>
       </template>
-      <template v-for="n in half">
+      <!-- <template v-for="n in half">
         <span class="star star-half"></span>
       </template>
       <template v-for="n in gray">
         <span class="star star-gray"></span>
-      </template>
+      </template> -->
     </div>
     <span>{{score}}</span>
   </div>

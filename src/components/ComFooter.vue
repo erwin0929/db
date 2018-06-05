@@ -1,7 +1,7 @@
 
 <!-- 公用底部footer -->
 <template>
-  <div class="footer">
+  <footer class="footer">
     <div class="logo-box">
       <img class="pic" src="../assets/douban-app-logo.png">
       <div>
@@ -9,8 +9,8 @@
         <span>我们的精神角落</span>
       </div>
     </div>
-    <div class="go-app">去 App Store 免费下载 iOS 客户端</div>
-  </div>
+    <address class="go-app">去 App Store 免费下载 iOS 客户端</address>
+  </footer>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
 <style scoped lang="scss" type="text/scss">
   @import "../sass/config";
   .footer{
-    padding: 0.3rem 0 2rem;
+    padding: 3.8rem 0 2rem;
   }
   .logo-box{
     display: flex;

@@ -5,15 +5,17 @@
     <header class="header">
       <span class="logo-txt">豆瓣</span>
       <ul class="nav">
-        <li class="nav-section"><router-link class="nav-href" :to="{name: 'Movie'}">电影</router-link></li>
-        <li class="nav-section"><router-link class="nav-href" :to="{name: 'Book'}">图书</router-link></li>
-        <li class="nav-section"><router-link class="nav-href" :to="{name: 'Status'}">广播</router-link></li>
-        <li class="nav-section"><router-link class="nav-href" :to="{name: 'Group'}">小组</router-link></li>
+        <li class="nav-section" v-for="item in $router.options.routes[0].children" :key="item.path">
+          <router-link class="nav-href" :to="item">{{item.cname}}</router-link>
+        </li>
       </ul>
       <span class="search"></span>
     </header>
-    <!-- 路由出口 -->
-    <router-view></router-view>
+    <!-- 页面主体部分 -->
+    <main class="main">
+      <!-- 路由出口 -->
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
@@ -24,12 +26,19 @@ export default {
     return {
       msg: 'name'
     }
+  },
+  mounted () {
   }
 }
 </script>
 
 <style scoped lang="scss" type="text/scss">
   @import "../sass/config";
+  .main{
+    flex: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling:touch;
+  }
   .page{
     height: 100vh;
     display: flex;

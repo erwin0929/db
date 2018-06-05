@@ -1,7 +1,7 @@
 
 <!-- 分类浏览 -->
 <template>
-  <div class="type-browse">
+  <nav class="type-browse">
     <div class="type-title">分类浏览</div>
     <div class="t-box">
       <section class="t-section" v-for="item in type" :key="item.title">
@@ -11,7 +11,7 @@
         </a>
       </section>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -28,9 +28,6 @@ export default {
 
 <style scoped lang="scss" type="text/scss">
   @import "../sass/config";
-  .type-browse{
-    padding-bottom: 2.5rem;
-  }
   .t-box{
     display: flex;
     flex-wrap: wrap;

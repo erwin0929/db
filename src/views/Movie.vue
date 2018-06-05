@@ -54,5 +54,4 @@ export default {
 
 <style scoped lang="scss" type="text/scss">
   @import "../sass/config";
-  @import "../sass/common";
 </style>

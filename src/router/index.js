@@ -12,8 +12,6 @@ import Group from '../views/Group'
 
 Vue.use(Router)
 
-// 注册和登录页完成,准备使用下Vuex和promise
-
 export default new Router({
   routes: [
     {
@@ -24,21 +22,25 @@ export default new Router({
         {
           path: 'movie',
           name: 'Movie',
+          cname: '电影',
           component: Movie
         },
         {
           path: 'book',
           name: 'Book',
+          cname: '图书',
           component: Book
         },
         {
           path: 'status',
           name: 'Status',
+          cname: '广播',
           component: Status
         },
         {
           path: 'group',
           name: 'Group',
+          cname: '小组',
           component: Group
         }
       ]

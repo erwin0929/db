@@ -44,8 +44,6 @@ export default {
 
 <style scoped lang="scss" type="text/scss">
   @import "../sass/config";
-  .inp-box{
-  }
   $inp-h: 3rem;
   $radius: 4px;
   .sub-box{

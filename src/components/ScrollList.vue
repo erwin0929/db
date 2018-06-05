@@ -1,13 +1,16 @@
 
 <!-- 横向滚动菜单 -->
 <template>
-  <div>
-    <div class="title-box">
+  <section>
+    <header class="title-box">
       <span class="title">{{title}}</span>
       <span>
         <router-link class="more-href" :to="{}">更多</router-link>
       </span>
-    </div>
+    </header>
+    <!-- 豆瓣纸书下的着重显示 -->
+    <slot name="firstShow"></slot>
+    <!-- 标签模式 -->
     <div v-if="model === 'tag'">
       <ul class="tag-box">
         <li v-for="item in items" :key="item.title">
@@ -15,6 +18,7 @@
         </li>
       </ul>
     </div>
+    <!-- 图片模式 -->
     <div v-else class="section-box">
       <div class="section" v-for="item in items" :key="item.id">
         <router-link :to="{}">
@@ -26,7 +30,7 @@
         </router-link>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -34,10 +38,7 @@ import Rating from '../components/Rating'
 export default {
   name: 'ScrollList',
   props: ['title', 'model', 'items'],
-  components: { Rating },
-  create () {
-    console.log(this)
-  }
+  components: { Rating }
 }
 </script>
 
