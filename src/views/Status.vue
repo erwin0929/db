@@ -5,7 +5,7 @@
     <aside class="open-app">
       <span class="view-more">打开App,浏览更多</span>
       <span class="download">极速下载</span>
-      <span class="open">打开123</span>
+      <span class="open">打开</span>
     </aside>
     <check-login></check-login>
     <com-footer></com-footer>
