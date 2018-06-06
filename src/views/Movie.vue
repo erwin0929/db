@@ -10,7 +10,6 @@
     <type-browse :type="type"></type-browse>
     <!-- 底部 -->
     <com-footer></com-footer>
-    <aside>asd </aside>
   </div>
 </template>
 
