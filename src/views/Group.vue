@@ -5,7 +5,7 @@
     <check-login></check-login>
     <div>
       <div class="list-box">
-        <h2 class="title">租房找室友</h2>
+        <h2 class="title">租房找室友123</h2>
         <div>
           <div class="list-sub">
             <div class="content-box">
