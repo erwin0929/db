@@ -8,6 +8,7 @@
       <span class="open">打开</span>
     </aside>
     <check-login></check-login>
+    <issues></issues>
     <com-footer></com-footer>
   </div>
 </template>
@@ -15,9 +16,10 @@
 <script>
 import CheckLogin from '../components/CheckLogin'
 import ComFooter from '../components/ComFooter'
+import Issues from '../components/Issues'
 export default {
   name: 'Status',
-  components: { CheckLogin, ComFooter }
+  components: { CheckLogin, ComFooter, Issues }
 }
 </script>
 

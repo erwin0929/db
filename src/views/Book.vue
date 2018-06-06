@@ -62,6 +62,7 @@ export default {
   },
   mounted () {
     this.getBook()
+    console.log(this)
   }
 }
 </script>
