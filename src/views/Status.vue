@@ -19,7 +19,9 @@ import ComFooter from '../components/ComFooter'
 import Issues from '../components/Issues'
 export default {
   name: 'Status',
-  components: { CheckLogin, ComFooter, Issues }
+  components: { CheckLogin, ComFooter, Issues },
+  mounted () {
+  }
 }
 </script>
 

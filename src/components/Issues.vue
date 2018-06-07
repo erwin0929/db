@@ -1,5 +1,5 @@
 
-<!-- 评论页 -->
+<!-- 组件: 评论 -->
 <template>
   <div>
     <div>
@@ -11,9 +11,9 @@
               <i class="arthor">{{item.name}}</i>写了日记
             </span>
           </div>
-          <div class="date">2017-03-01 19:30:41</div>
+          <div class="date">{{item.dateTime}}</div>
           <div class="detail-box">
-            <h2 class="update">豆瓣App 4.12.0 主要更新</h2>
+            <h2 class="update">{{item.title}}</h2>
             <article class="graph-txt">- 可以写读书笔记了，同时支持编辑。随时随地，摘录怦然心动的段落，写下阅读时的随感。来写笔记吧，你...</article>
           </div>
           <div class="icon-box">
@@ -24,11 +24,11 @@
               </span>
               <span class="sub-box1">
                 <i class="commet"></i>
-                <span>1</span>
+                <span>{{item.commet}}</span>
               </span>
               <span class="sub-box1">
                 <i class="retweet"></i>
-                <span>0</span>
+                <span>{{item.retweet}}</span>
               </span>
             </div>
             <div class="inter">
@@ -45,28 +45,27 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'Issues',
-  data () {
-    return {
-      list: [
-        {
-          id: 1,
-          name: '神的手指',
-          like: 433
-        },
-        {
-          id: 2,
-          name: '大哥大',
-          like: 102
-        },
-        {
-          id: 3,
-          name: '淘宝',
-          like: 20392
-        }
-      ]
-    }
+  computed: {
+    abc () {
+      return 123
+    },
+    ...mapState({
+      list: state => state.status.list
+    })
+  },
+  methods: {
+    // this.getData 映射为 this.$store.dispatch('getData')
+    // 即调用getData则分发actions
+    ...mapActions([
+      'getData'
+    ])
+  },
+  mounted () {
+    // 打开此页立即调用getData方法
+    this.getData()
   }
 }
 </script>

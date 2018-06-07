@@ -3,7 +3,7 @@
   <div class="page">
     <!-- 公共头部 -->
     <header class="header">
-      <span class="logo-txt">豆瓣测试用</span>
+      <span class="logo-txt">豆瓣</span>
       <ul class="nav">
         <li class="nav-section" v-for="item in $router.options.routes[0].children" :key="item.path">
           <router-link class="nav-href" :to="item">{{item.cname}}</router-link>
