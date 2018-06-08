@@ -1,9 +1,7 @@
 // book专用mock
-import Mock from 'mockjs'
 import common from '../common'
 
 const { type, size, text } = common
-const Random = Mock.Random
 
 // 虚构类
 const fic = {
@@ -18,7 +16,7 @@ const fic = {
       '玻璃珠游戏',
       't天下有敌'
     ],
-    'image': Random.dataImage(size, text),
+    'image': `@dataImage(${size}, ${text})`,
     'score|5-9.1': 1
   }]
 }
@@ -34,7 +32,7 @@ const noFic = {
       '非虚构的我',
       '小说何以重要'
     ],
-    'image': Random.dataImage(size, text),
+    'image': `@dataImage(${size}, ${text})`,
     'score|6-9.1': 1
   }]
 }
@@ -86,7 +84,7 @@ const paperBook = {
         '再不远行',
         '寻常放荡'
       ],
-      'image': Random.dataImage(size, text),
+      'image': `@dataImage(${size}, ${text})`,
       'score|5-9.1': 1
     }
   ]
@@ -98,7 +96,7 @@ const paperFirstShow = {
     'title': '造物',
     'intro': '改变世界的万物图典,3000幅图例的发明与冒险',
     'price': '¥ 68',
-    'image': Random.dataImage('120x160', text)
+    'image': `@dataImage(120x160, ${text})`
   }]
 }
 

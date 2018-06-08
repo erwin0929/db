@@ -21,6 +21,9 @@ export default {
   }
   input{
     border: none;
+    width: 100%;
+    display: block;
+    outline: none;
   }
   ul,
   li{

@@ -4,6 +4,8 @@ import movie from './modules/movie'
 import book from './modules/book'
 // status的数据格式 { state, mutations, actions }
 import status from './modules/status'
+import talion from './modules/talion'
+import home from './modules/home'
 
 Vue.use(Vuex)
 
@@ -12,6 +14,8 @@ export default new Vuex.Store({
   modules: {
     movie,
     book,
-    status
+    status,
+    talion,
+    home
   }
 })

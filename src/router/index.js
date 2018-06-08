@@ -9,11 +9,13 @@ import Movie from '../views/Movie'
 import Book from '../views/Book'
 import Status from '../views/Status'
 import Group from '../views/Group'
+import Home from '../views/Home'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+
     {
       path: '/page',
       name: 'Page',
@@ -42,17 +44,32 @@ export default new Router({
           name: 'Group',
           cname: '小组',
           component: Group
+        },
+        {
+          path: 'home',
+          name: 'Home',
+          component: Home
+        },
+        {
+          path: '/page',
+          redirect: '/page/home'
         }
       ]
     },
     {
+      path: '/',
+      redirect: '/page/'
+    },
+    {
       path: '/login',
       name: 'Login',
+      cname: '登录豆瓣',
       component: Login
     },
     {
       path: '/register',
       name: 'Register',
+      cname: '注册账号',
       component: Register
     }
   ]

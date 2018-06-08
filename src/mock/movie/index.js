@@ -1,9 +1,7 @@
 // movie使用的mock
-import Mock from 'mockjs'
 import common from '../common'
 
 const { type, size, text } = common
-const Random = Mock.Random
 
 // 影院热映
 const hotMovie = {
@@ -19,7 +17,7 @@ const hotMovie = {
       '玛丽与魔女之花',
       '犬之岛'
     ],
-    'image': Random.dataImage(size, text),
+    'image': `@dataImage(${size}, ${text})`,
     'score|5-9.1': 1
   }]
 }
@@ -38,7 +36,7 @@ const onlineMovie = {
       '泰坦尼克号',
       '辛德勒的名单'
     ],
-    'image': Random.dataImage(size, text),
+    'image': `@dataImage(${size}, ${text})`,
     'score|6-9.1': 1
   }]
 }
@@ -55,7 +53,7 @@ const newMovie = {
       '极限挑战',
       '非诚勿扰'
     ],
-    'image': Random.dataImage(size, text),
+    'image': `@dataImage(${size}, ${text})`,
     'score|6-9.1': 1
   }]
 }
