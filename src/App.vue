@@ -37,4 +37,8 @@ export default {
     width: 100%;
     display: block;
   }
+  h2{
+    margin: 0;
+    padding: 0;
+  }
 </style>
