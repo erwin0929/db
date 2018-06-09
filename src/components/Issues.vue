@@ -22,14 +22,16 @@
                 <i class="like"></i>
                 <span>{{item.like}}</span>
               </span>
-              <span class="sub-box1">
-                <i class="commet"></i>
-                <span>{{item.commet}}</span>
-              </span>
-              <span class="sub-box1">
-                <i class="retweet"></i>
-                <span>{{item.retweet}}</span>
-              </span>
+              <template v-if="abcIndex">
+                <span class="sub-box1">
+                  <i class="commet"></i>
+                  <span>{{item.commet}}</span>
+                </span>
+                <span class="sub-box1">
+                  <i class="retweet"></i>
+                  <span>{{item.retweet}}</span>
+                </span>
+              </template>
             </div>
             <div class="inter">
               <i class="more"></i>
@@ -48,6 +50,7 @@
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'Issues',
+  props: ['abcIndex'],
   computed: {
     abc () {
       return 123

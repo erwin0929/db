@@ -22,13 +22,24 @@
       </ul>
     </div>
     <!-- 滚动插件列表 -->
-    <div>
-      <p v-for="item in homeList" :key="item.id">
-        <span>{{item.title}}</span>
-        <img :src="item.image">
-      </p>
-      <infinite-loading @infinite="onInfinite" :spinner="'spiral'" ref="infiniteLoading"></infinite-loading>
-    </div>
+    <section>
+      <div class="h-list-box" v-for="item in homeList" :key="item.id">
+        <!-- 左侧文字区 -->
+        <div class="txt-box">
+          <h2 class="i-title">{{item.title}}</h2>
+          <div class="i-intro">{{item.intro}}</div>
+          <span class="i-type">{{item.type}}</span>
+        </div>
+        <!-- 图片 -->
+        <div class="h-img"><img :src="item.image"></div>
+      </div>
+      <!-- 插件组件 -->
+      <infinite-loading @infinite="onInfinite" :distance="10" :spinner="'spiral'" ref="infiniteLoading">
+        <span slot="no-more">
+          没有更多数据了!
+        </span>
+      </infinite-loading>
+    </section>
   </div>
 </template>
 
@@ -45,9 +56,14 @@ export default {
   },
   methods: {
     onInfinite ($state) {
-      setTimeout(() => {
-        this.loadMore()
-      }, 1000)
+      if (this.homeList.length >= 10) {
+        $state.complete()
+      } else {
+        setTimeout(() => {
+          this.loadMore()
+          $state.loaded()
+        }, 1000)
+      }
     },
     ...mapActions([
       'loadMore'
@@ -82,5 +98,33 @@ export default {
         text-align: center;
       }
     }
+  }
+  .h-list-box{
+    border-bottom: 1px solid #e3e3e3;
+    padding: 1rem 0.8rem 1.9rem 0;
+    display: flex;
+    justify-content: flex-start;
+    .h-img{
+      width: 6rem;
+      margin-left: 1.2rem;
+    }
+    .i-title{
+      font-size: 1rem;
+      color: #494949;
+      line-height: 1.5rem;
+    }
+    .i-intro{
+      font-size: 0.6rem;
+      color: #aaa;
+      line-height: 1.1rem;
+      margin: 0.8rem 0 1.2rem;
+    }
+    .i-type{
+      color: #ccc;
+      font-size: 0.6rem;
+    }
+  }
+  .txt-box{
+    flex: 1;
   }
 </style>

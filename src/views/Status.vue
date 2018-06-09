@@ -8,7 +8,7 @@
       <span class="open">打开</span>
     </aside>
     <check-login></check-login>
-    <issues></issues>
+    <issues :abcIndex="true"></issues>
     <com-footer></com-footer>
   </div>
 </template>

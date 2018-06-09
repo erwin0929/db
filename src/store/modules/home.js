@@ -2,7 +2,7 @@ import Mock from 'mockjs'
 import axios from 'axios'
 
 Mock.mock(/Api\/getHome/, 'post', {
-  'list|20': [
+  'list|10': [
     {
       'id|+1': 1,
       'title|+1': [
@@ -30,12 +30,17 @@ Mock.mock(/Api\/getHome/, 'post', {
 })
 
 const state = {
+  getIndex: 0,
+  length: 3,
   homeList: []
 }
 
 const mutations = {
   loadMore (state, payLoad) {
-    state.homeList = payLoad.data.list
+    let [ index, length ] = [0, 3]
+    state.homeList = state.homeList.concat(payLoad.data.list.splice(index, length))
+    index += length
+    console.log(1)
   }
 }
 
