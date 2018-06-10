@@ -38,9 +38,9 @@ const state = {
 const mutations = {
   loadMore (state, payLoad) {
     let [ index, length ] = [0, 3]
-    state.homeList = state.homeList.concat(payLoad.data.list.splice(index, length))
+    console.log(payLoad)
+    state.homeList = state.homeList.concat(payLoad.list.splice(index, length))
     index += length
-    console.log(1)
   }
 }
 
@@ -48,10 +48,10 @@ const actions = {
   loadMore ({ commit }) {
     axios.post('Api/getHome')
       .then((response) => {
-        let { data } = response
+        let { data: { list } } = response
         commit({
           type: 'loadMore',
-          data
+          list
         })
       })
   }
