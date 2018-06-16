@@ -3,13 +3,15 @@
 <template>
   <section>
     <header class="title-box">
-      <span class="title">{{title}}</span>
+      <span class="title" @click="abc">{{title}}</span>
       <span>
         <router-link class="more-href" :to="{}">更多</router-link>
       </span>
     </header>
     <!-- 豆瓣纸书下的着重显示 -->
     <slot name="firstShow"></slot>
+    <!-- 默认显示 -->
+    <slot></slot>
     <!-- 标签模式 -->
     <div v-if="model === 'tag'">
       <ul class="tag-box">
@@ -38,7 +40,18 @@ import Rating from '../components/Rating'
 export default {
   name: 'ScrollList',
   props: ['title', 'model', 'items'],
-  components: { Rating }
+  components: { Rating },
+  methods: {
+    abc () {
+      console.log(this)
+      this.$emit('parent', {
+        abcd: 123,
+        age: 23
+      })
+    }
+  },
+  mounted () {
+  }
 }
 </script>
 

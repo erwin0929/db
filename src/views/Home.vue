@@ -68,6 +68,8 @@ export default {
     ...mapActions([
       'loadMore'
     ])
+  },
+  mounted () {
   }
 }
 </script>

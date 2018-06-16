@@ -10,12 +10,15 @@ import Book from '../views/Book'
 import Status from '../views/Status'
 import Group from '../views/Group'
 import Home from '../views/Home'
+import Test from '../views/Test'
+import User from '../views/User'
+import A from '../views/A'
+import B from '../views/B'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-
     {
       path: '/page',
       name: 'Page',
@@ -53,6 +56,23 @@ export default new Router({
         {
           path: '/page',
           redirect: '/page/home'
+        },
+        {
+          // test/abc/id/2023
+          path: 'test/:username/id/:id',
+          name: 'Test',
+          component: Test,
+          children: [
+            {
+              path: 'ca',
+              name: 'Ca',
+              components: {
+                default: User,
+                A,
+                B
+              }
+            }
+          ]
         }
       ]
     },
@@ -72,5 +92,6 @@ export default new Router({
       cname: '注册账号',
       component: Register
     }
-  ]
+  ],
+  linkActiveClass: 'defaultClass'
 })

@@ -10,7 +10,7 @@
         <router-link class="nav-href" :to="item">{{item.cname}}</router-link>
       </li>
     </ul>
-    <span class="search" @click="openTalion"></span>
+    <span class="search" @click="openTalion($event)"></span>
   </header>
 </template>
 
@@ -18,7 +18,8 @@
 export default {
   name: 'Header',
   methods: {
-    openTalion () {
+    openTalion ($event) {
+      console.log($event)
       this.$emit('openTalion', 123)
     }
   },

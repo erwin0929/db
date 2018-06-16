@@ -2,7 +2,7 @@
 <!-- 电影页 -->
 <template>
   <div class="movie-page">
-    <scroll-list :title="title.movieTitle" :items="hotMovie"></scroll-list>
+    <scroll-list :title="title.movieTitle" :items="hotMovie" @parent="hahaha" ref="testRef"></scroll-list>
     <scroll-list :title="title.onlineTitle" :items="onlineMovies"></scroll-list>
     <scroll-list :title="title.newMovieTitle" :items="newMovies"></scroll-list>
     <scroll-list :title="title.findTitle" :items="findMovie" :model="showModel"></scroll-list>
@@ -35,7 +35,10 @@ export default {
   methods: {
     ...mapActions([
       'getMovie'
-    ])
+    ]),
+    hahaha (advice) {
+      console.log(this.$refs)
+    }
   },
   computed: {
     ...mapState({
@@ -46,8 +49,19 @@ export default {
       type: state => state.movie.type
     })
   },
+  beforeCreate () {
+  },
+  created () {
+  },
+  beforeMount () {
+  },
   mounted () {
     this.getMovie()
+    console.log(this)
+  },
+  beforeUpdate () {
+  },
+  updated () {
   }
 }
 </script>
