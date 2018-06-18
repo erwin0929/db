@@ -44,4 +44,8 @@ export default {
     margin: 0;
     padding: 0;
   }
+  button{
+    border: none;
+    outline: none;
+  }
 </style>

@@ -2,15 +2,6 @@
 // *** 路由配置文件
 import Vue from 'vue'
 import Router from 'vue-router'
-import Page from '../views/Page'
-import Login from '../views/Login'
-import Register from '../views/Register'
-import Movie from '../views/Movie'
-import Book from '../views/Book'
-import Status from '../views/Status'
-import Group from '../views/Group'
-import Home from '../views/Home'
-import Test from '../views/Test'
 import User from '../views/User'
 import A from '../views/A'
 import B from '../views/B'
@@ -22,36 +13,36 @@ export default new Router({
     {
       path: '/page',
       name: 'Page',
-      component: Page,
+      component: () => import('@/views/Page'),
       children: [
         {
           path: 'movie',
           name: 'Movie',
           cname: '电影',
-          component: Movie
+          component: () => import('@/views/Movie')
         },
         {
           path: 'book',
           name: 'Book',
           cname: '图书',
-          component: Book
+          component: () => import('@/views/Book')
         },
         {
           path: 'status',
           name: 'Status',
           cname: '广播',
-          component: Status
+          component: () => import('@/views/Status')
         },
         {
           path: 'group',
           name: 'Group',
           cname: '小组',
-          component: Group
+          component: () => import('@/views/Group')
         },
         {
           path: 'home',
           name: 'Home',
-          component: Home
+          component: () => import('@/views/Home')
         },
         {
           path: '/page',
@@ -61,7 +52,7 @@ export default new Router({
           // test/abc/id/2023
           path: 'test/:username/id/:id',
           name: 'Test',
-          component: Test,
+          component: import('@/views/Test'),
           children: [
             {
               path: 'ca',
@@ -84,13 +75,13 @@ export default new Router({
       path: '/login',
       name: 'Login',
       cname: '登录豆瓣',
-      component: Login
+      component: () => import('@/views/Login')
     },
     {
       path: '/register',
       name: 'Register',
       cname: '注册账号',
-      component: Register
+      component: () => import('@/views/Register')
     }
   ],
   linkActiveClass: 'defaultClass'

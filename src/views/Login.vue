@@ -4,7 +4,7 @@
   <div class="login-page">
     <div class="title-box">登录豆瓣</div>
     <div class="cancel" @click="back">取消</div>
-    <login-input v-bind="notice" @showPwd="showPwd"></login-input>
+    <login-input v-bind="notice"></login-input>
     <div>
       <div class="other-login">使用其他方式登录 & 找回密码</div>
       <div class="href">

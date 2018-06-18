@@ -76,13 +76,13 @@ export default {
     color: #fff;
     border-radius: 4px;
     margin: 1.2rem 0 0;
-    background-color: #17aa52;
     text-align: center;
     button{
       width: 100%;
       color: #fff;
       height: $inp-h;
       line-height: $inp-h;
+      background-color: #17aa52;
     }
   }
   input{
