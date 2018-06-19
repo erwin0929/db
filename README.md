@@ -473,9 +473,10 @@ export default new Router({
 * 使用方法很简单,安装后导入,使用全局方法`Vue.use`,该方法会自动阻止多次注册相同的插件,届时只会注册一次。
 * 完成配置后由入口文件导入,并将该配置传入Vue实例中,从而注入到各个组件中。
 * 首先创建`Router`实例,`path` 为匹配的路径,当匹配到该名称时,会显示component中的组件。命名路由:`name`,为某个路由设置名称,可用作页面跳转。`children`为嵌套路由,后面会讲。
-* 对于所有ID不同的用户,都用同一个组件来渲染,这时我们可以使用动态路由,在路径后加入`:id`。我们可以在`this.$route.params`中找到该`id`值,`this`指的是当前`Vue`实例  
-`$route`中也包含了诸多有用的属性,比如`$route.path`保存了完整的路径名,`$route.fullPath`保存了解析后的URL,包含查询参数和has,`$route.query`中保留了查询参数(如果有的话)。  
-`$route.name` 保存了路由名称(如果有的话)。`$route.redirectedFrom`如果存在重定向,则显示为来源名。
+* 对于所有ID不同的用户,都用同一个组件来渲染,这时我们可以使用动态路由,在路径后加入`:id`。我们可以在路由对象`this.$route.params`中找到该`id`值,`this`指的是当前`Vue`实例。    
+路由对象表示当前激活的,该对象不可变,每次成功的导航后都会产生一个新的对象。  
+路由的状态信息`$route`中也包含了诸多有用的属性,比如`$route.path`保存了完整的路径名,`$route.fullPath`保存了解析后的URL,包含查询参数和hash,`$route.query`中保留了查询参数(如果有的话)。  
+`$route.name` 保存了路由名称(如果有的话)。`$route.redirectedFrom`如果存在重定向,则显示为来源名。`$route.matched` 以数组形式保存了当前路由所有嵌套路径的路由记录,包括children中的记录 
 * 嵌套路由: 在`Page`页下设置一个路由出口`<router-view></router-view>`, 当匹配到`/page/movie/20`时, `Movie`会被渲染在`Page`下的`<router-view></router-view>`中。
 前提是我们在`children`属性做了相关配置。
 * 在路由实例中存放了很多有用的属性和方法,可以使用`$router.push`进行页面跳转,也可以使用`<router-link :to="...">`。
