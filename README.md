@@ -39,6 +39,7 @@
 * [Sass](https://www.sass.hk)
 
 ## 自我小结
+* 接口调用的是豆瓣接口,在config/index.js里设置了代理请求proxyTable.target = 'https://api.douban.com/v2/'
 * 本文会逐个介绍每个目录下的文件及其作用,以及我的心得和体会,累积的经验。  
 * 本项目基于webpack,固使用的是`.vue`单文件组件开发。
 * 在撰写的过程中也是对知识点的巩固,打好基础的同时将这些要点扎根在自己的大脑里,本篇纯手写,绝无ctrl+c官方Api,复制率被控制在3%以下。  
